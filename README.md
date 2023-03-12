@@ -40,7 +40,7 @@ The code contains 3 components - App.jsx(main page) , Header.jsx(Header) and Car
 #### index.css
 
  - styling no class components like "body, header, code"
- - Adding Media screen (making it responsive for small screens to 320width in CSS) "with class styles"
+ - Adding Media screen (making it responsive for small screens to 300width in CSS) "with class styles"
 
 #### App.css
 
