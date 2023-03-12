@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# Support Desk task
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Structure
 
-## Available Scripts
+The code contains 3 components - App.jsx(main page) , Header.jsx(Header) and CardPerson.jsx (userData in card)
 
-In the project directory, you can run:
+###  App.jsx
 
-### `npm start`
+#### Functionality
+ - Importing, if needed fetching the data from the API
+ - Using state for a search query that we set from the Header component using props.
+ - Filtering data and rendering the users (all if the search state is empty) and selecting depending on the input we type. We count only the API object values that are string (typing "true" or "phone" won't activate the filter)
+#### Rendering
+ - Header component and passing the props to set the state
+ - Container for the card component
+ - Calling filteredData function and using map to make a copy of the card for each user + giving props. 
+ - Using the phone as a key value, because it should be unique and we don't have an ID.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+###  Header.jsx
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+#### Rendering
+ - H tag for the Given text
+ - Div "Serch container", with input that value & onChange are passed as props into the App component
+ - The Search button for the icon only 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+###  CardPerson.jsx
 
-### `npm run build`
+#### Functionality
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ - setStatus function that returns the icon to show if the user is available or not. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Rendering
+ - imgContainer with 2 images - 1 is the user image(if missing put default) and the other the availability image that calls "setStatus" function
+ - Container for details that returns the user details 
+ - Some extra padding for the Location paragraph to cover other <p> tags until a user hovers the card
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+###  Styles
 
-### `npm run eject`
+#### index.css
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+ - styling no class components like "body, header, code"
+ - Adding Media screen (making it responsive for small screens to 320width in CSS) "with class styles"
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### App.css
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+ - Class styles, with comments for each section of the components
+ - Hover or other effects at the end of each selection
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+_________________________________________________________________________________________________________
+## Task
 
-## Learn More
+Create a simple Support Desk app that should look similar to the following mockup. Use the [assets/api.json](assets/api.json) file to simulate Web API calls.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Design](public/design.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Requirements
 
-### Code Splitting
+- Must be a Single Page App (SPA). Use React, Angular, Vue or a SPA framework of your choice.
+- Must be responsive - working on mobile, tablet and desktop.
+- Make sure more details come up when you hover person (see the second item).
+- Change icon depending on the person's status. Use [assets/icon-available.svg](assets/icon-available.svg) if the person is available, [assets/icon-busy.svg](assets/icon-busy.svg) otherwise. Use [assets/icon-search.svg](assets/icon-search.svg) for the search bar.
+- Implement basic search functionality.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Feel free to use a UI library of your choice - Material Design, Bootstrap, Tailwind, etc.
 
-### Analyzing the Bundle Size
+## Criteria
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The following are taken into consideration
 
-### Making a Progressive Web App
+- Clean and well-organized code
+- Architecture
+- Code comments (quality, not quantity)
+- Tests
+- Linters, docs, etc. are a bonus
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+We are looking for organized scalable frontend code, with attention to details and corner case handling. Show us your eye for detail and consideration for colleagues that will maintain and modify the code.
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Please let us know if you have any questions.
